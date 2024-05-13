@@ -1,0 +1,41 @@
+.skeleton {
+  background-color: var(--on-background);
+  animation: skeleton-loading 500ms linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+.skeleton-card .card-banner {
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: var(--radius-4);
+}
+.skeleton-card .card-title {
+  margin-block: 8px;
+  height: 16px;
+  width: 50%;
+}
+.skeleton-card .card-text {
+  height: 12px;
+  width: 80%;
+}
+/* Skeleton Detail*/
+.detail-banner-skeleton {
+  aspect-ratio: 1/1;
+}
+.detail-content-skeleton .title-skeleton {
+  height: 32px;
+  width: 50%;
+}
+.detail-content-skeleton .text-skeleton {
+  height: 14px;
+  width: 80%;
+}
+.detail-content-skeleton .filter-chip-skeleton {
+  width: 80px;
+}

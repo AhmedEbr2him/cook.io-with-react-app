@@ -1,0 +1,270 @@
+.hero {
+  padding-inline: 16px;
+}
+.banner-card {
+  color: var(--white);
+  background-color: var(--image-background);
+  background-image: url(../../images/hero-banner-small.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 480px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+  padding-inline: 20px;
+  border-radius: var(--radius-8);
+}
+.hero .search-wrapper {
+  position: relative;
+  color: var(--on-background);
+  border-radius: var(--radius-4);
+  max-width: 480px;
+  width: 100%;
+  margin-inline: auto;
+  margin-block: 16px 12px;
+  overflow: hidden;
+}
+.hero .search-wrapper .leading-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.search-field {
+  height: 56px;
+  background-color: var(--primary-container);
+  padding-inline: 56px;
+  outline: none;
+}
+.search-submit {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  width: 48px;
+  background-color: var(--primary);
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  border-radius: var(--radius-4);
+  transition: var(--transition-short);
+}
+.search-submit:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--primary-hover);
+}
+/**
+* TABS
+*/
+.tab .tab-list {
+  background-color: var(--background);
+  position: sticky;
+  top: var(--header-height);
+  margin-inline: -16px;
+  padding-inline: 16px;
+  margin-block: 16px 12px;
+  z-index: 1;
+}
+.tab-panel[hidden] {
+  display: none;
+}
+.tab .btn-secondary {
+  max-width: 100%;
+  margin-block-start: 12px;
+}
+/**
+ * Secondary tab
+ */
+.tab-list {
+  display: flex;
+  color: var(--on-background-variant);
+  box-shadow: inset 0 -1px 0 var(--outline);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-list::-webkit-scrollbar {
+  display: none;
+}
+.tab-btn:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--alpha-10);
+}
+.tab-btn {
+  height: 48px;
+  padding-inline: 24px;
+  border-block-end: 2px solid transparent;
+  transition: var(--transition-short);
+  flex: 1 0 80px;
+  position: relative;
+}
+
+.tab-btn[aria-selected='true'] {
+  color: var(--on-background);
+  border-color: var(--primary);
+}
+/**
+ * SLIDER
+ */
+.slider {
+  --gap: 8px;
+  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  padding-block-end: 5px;
+}
+.slider::-webkit-scrollbar {
+  height: 4px;
+}
+.slider::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.slider:where(:hover, :focus-visible)::-webkit-scrollbar-thumb {
+  background-color: var(--alpha-10);
+}
+.slider-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: var(--gap);
+  transition: var(--transition-medium);
+}
+.slider-item {
+  min-width: calc(50% - 4px);
+}
+.slick-track .load-more-card {
+  height: 100%;
+  background-color: var(--primary-container);
+  border-radius: var(--radius-4);
+  border: 1px solid var(--outline);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 310px;
+}
+
+.card {
+  margin-inline: 8px;
+}
+/**
+ * TAGS
+*/
+.tag {
+  text-align: center;
+}
+.tag .setion-text {
+  max-width: 50ch;
+  margin-inline: auto;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-block-start: 24px;
+}
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  z-index: 2;
+}
+.prev-arrow {
+  left: -16px;
+  @media (width < 800px) {
+    left: -10px;
+  }
+}
+.next-arrow {
+  right: -16px;
+  @media (width < 800px) {
+    right: -10px;
+  }
+}
+/**
+* Responsive for  larger than 575px screen
+*/
+@media only screen and (min-width: 600px) {
+  /**
+    * HERO
+  */
+  .banner-card {
+    background-image: url('../../images/hero-banner-medium.jpg');
+  }
+  .search-field {
+    height: 72px;
+  }
+  .search-wrapper .search-submit {
+    width: 100px;
+  }
+  .hero .search-wrapper {
+    margin-block: 24px 16px;
+  }
+
+  /**
+    * TAB
+  */
+  .tab .tab-list {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .tab .btn-secondary {
+    max-width: max-content;
+    margin-inline: auto;
+  }
+  /**
+    * RECIPE SLIDER
+  */
+  .slider-item {
+    min-width: 206px;
+  }
+
+  /**
+    * TAG
+  */
+  .tag .section-title {
+    margin-block-end: 12px;
+  }
+}
+/**
+* Responsive for  larger than 768 screen
+*/
+@media only screen and (min-width: 992px) {
+  /**
+    * HERO
+  */
+  .hero .search-wrapper {
+    max-width: 800px;
+  }
+  .banner-card {
+    background-image: url(../../images/hero-banner-large.jpg);
+  }
+  .banner-card > .label-medium {
+    font-size: 1.4rem;
+    font-weight: var(--weight-regular);
+    opacity: 0.8;
+  }
+  /**
+  * TAB
+  */
+  .tab .tab-list {
+    margin-block-start: 0;
+  }
+  .tab-btn {
+    height: 64px;
+  }
+
+  /**
+  * RECIPE SLIDER
+  */
+  .slider-item {
+    min-width: calc(20% - 6.4px);
+  }
+}
+/**
+* Responsive for  larger than 992px screen
+*/
+@media only screen and (min-width: 1400px) {
+  .slider-item {
+    min-width: calc(16.66% - 6.4px);
+  }
+}

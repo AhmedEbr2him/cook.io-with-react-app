@@ -1,0 +1,9 @@
+.saved-recipe-page {
+  padding-block-end: 24px;
+}
+.saved-recipe-page .section-title {
+  line-height: 40px;
+}
+.saved-recipe-page .grid-list {
+  grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+}

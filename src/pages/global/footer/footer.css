@@ -1,0 +1,47 @@
+.footer .logo {
+  display: none;
+}
+.footer {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+  border-block-start: 1px solid var(--outline);
+}
+.copyright {
+  opacity: 0.8;
+  text-align: left;
+}
+.footer .edamam img {
+  width: 180px;
+}
+.footer a {
+  display: inline-block;
+}
+@media only screen and (min-width: 600px) {
+  /**
+    * FOOTER
+  */
+  .footer {
+    justify-content: space-between;
+    padding-inline: 32px;
+  }
+}
+/**
+* Responsive for  larger than 575px screen
+*/
+@media only screen and (min-width: 768px) {
+  .footer .logo {
+    display: block;
+  }
+}
+/**
+* Responsive for  larger than 575px screen
+*/
+@media only screen and (min-width: 992px) {
+  .footer {
+    padding-inline: 40px;
+  }
+}

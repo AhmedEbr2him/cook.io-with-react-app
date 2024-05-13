@@ -1,0 +1,105 @@
+.detail-banner {
+  border-radius: var(--radius-8);
+}
+.detail-content {
+  margin-block: 32px;
+}
+.detail-page .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.detail-content .btn-secondary {
+  flex-shrink: 0;
+}
+.detail-page .saved .unsaved-text,
+.detail-page .removed .save-text {
+  display: block;
+}
+.detail-page .saved .save-text,
+.detail-page .removed .unsave-text {
+  display: none;
+}
+.detail-author {
+  color: var(--on-background);
+  margin-block: 16px;
+}
+.detail-author span {
+  display: inline;
+}
+.detail-state {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.detail-state .state-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-block: 16px;
+}
+.detail-state .state-item:not(:last-child) {
+  border-inline-end: 1px solid var(--outline);
+}
+.detail-state .state-item .label-medium {
+  text-transform: capitalize;
+  opacity: 0.8;
+}
+.detail-page .tag-list {
+  justify-content: flex-start;
+  margin-block: 16px 32px;
+}
+.ingr-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ingr-title .label-medium {
+  opacity: 0.8;
+}
+.ingr-list {
+  margin-block-start: 16px;
+  border-block-start: 1px solid var(--outline);
+  padding-block-start: 8px;
+}
+.ingr-item {
+  color: var(--on-background-variant);
+  list-style-type: disc;
+  margin-block: 8px;
+  margin-inline-start: 24px;
+}
+@media only screen and (min-width: 600px) {
+  .detail-banner {
+    max-width: 420px;
+  }
+  .detail-state .state-item {
+    padding-block: 20px;
+  }
+}
+/**
+* Responsive for  larger than 768px screen
+*/
+@media only screen and (min-width: 992px) {
+  .detail-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .detail-page {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    align-items: flex-start;
+    gap: 36px;
+  }
+  .detail-banner {
+    position: sticky;
+    top: calc(var(--header-height) 32px);
+    margin-block-start: 32px;
+    max-width: 100%;
+  }
+  .detail-state .state-item {
+    padding-block: 24px;
+    gap: 8px;
+  }
+}
